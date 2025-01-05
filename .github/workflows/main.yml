@@ -42,19 +42,17 @@ jobs:
           source venv/bin/activate
           python -m unittest discover -s tests -p "*.py"
       
-      - name: Create archive of dependencies
+       # Step 4: Zip all files in the NEHA-ECOMMERCE folder
+      - name: Zip all files
         run: |
-          cd ./venv/lib/python3.8/site-packages
-          zip -r9 ../../../../api.zip .
+          zip -r neha-ecommerce.zip ./*
 
-      - name: Add API files to Zip file
-        run: cd ./api && zip -g ../api.zip -r .
-
+      # Step 5: Upload zip file as artifact
       - name: Upload zip file artifact
         uses: actions/upload-artifact@v3
         with:
-          name: api
-          path: api.zip
+          name: neha-ecommerce
+          path: neha-ecommerce.zip
 
   CD:
     runs-on: ubuntu-latest
