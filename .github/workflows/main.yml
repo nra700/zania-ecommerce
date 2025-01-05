@@ -59,7 +59,7 @@ jobs:
     needs: CI
     steps:
       # Step 1: Download the artifact
-      - name: Download neha-ecommerce zip artifact
+      - name: Download zania-ecommerce zip artifact
         uses: actions/download-artifact@v3
         with:
           name: neha-ecommerce
@@ -74,7 +74,7 @@ jobs:
 
       # Step 3: Upload to S3
       - name: Upload to S3
-        run: aws s3 cp neha-ecommerce.zip s3://ecommerce-deploy/zania-ecommerce.zip
+        run: aws s3 cp zania-ecommerce.zip s3://ecommerce-deploy/zania-ecommerce.zip
 
       # Step 4: Deploy to Lambda
       - name: Deploy Lambda
