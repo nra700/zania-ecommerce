@@ -42,7 +42,7 @@ jobs:
           source venv/bin/activate
           python -m unittest discover -s tests -p "*.py"
       
-       # Step 4: Zip all files in the NEHA-ECOMMERCE folder
+       # Step 4: Zip all files in the ZANIA-ECOMMERCE folder
       - name: Zip all files
         run: |
           zip -r zania-ecommerce.zip ./*
@@ -62,7 +62,7 @@ jobs:
       - name: Download zania-ecommerce zip artifact
         uses: actions/download-artifact@v3
         with:
-          name: neha-ecommerce
+          name: zania-ecommerce
 
       # Step 2: Install AWS CLI
       - name: Install AWS CLI
