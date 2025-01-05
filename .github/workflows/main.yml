@@ -60,7 +60,7 @@ jobs:
     steps:
       # Step 1: Download the artifact
       - name: Download neha-ecommerce zip artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: neha-ecommerce
 
